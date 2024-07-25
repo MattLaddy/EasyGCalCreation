@@ -1,0 +1,39 @@
+{
+    "name": "Highlight to Google Calendar",
+    "version": "1.0.0",
+    "description": "Highlight text and create Google Calendar events",
+    "permissions": ["storage", "identity", "contextMenus"],
+    "host_permissions": ["https://*.google.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/calendar.png"
+        ],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "assets/calendar.png",
+        "24": "assets/calendar.png",
+        "32": "assets/calendar.png"
+      },
+      "default_title": "Highlight to Google Calendar",
+      "default_popup": "popup.html"
+    },
+    "oauth2": {
+      "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com",
+      "scopes": ["https://www.googleapis.com/auth/calendar.events"]
+    },
+    "manifest_version": 3
+  }
+  
