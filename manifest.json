@@ -1,18 +1,21 @@
 {
   "manifest_version": 3,
   "name": "Calendar Invite Creator",
+  "description": "Create Google Calendar invites from selected text.",
   "version": "1.0",
   "permissions": [
     "contextMenus",
     "identity",
-    "activeTab",
+    "activeTab"
+  ],
+  "host_permissions": [
     "https://www.googleapis.com/"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "oauth2": {
-    "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com",
+    "client_id": "162327068939-ev31pvd4koh0tb33f5ilf3b9pb5e1pgs.apps.googleusercontent.com",
     "scopes": [
       "https://www.googleapis.com/auth/calendar.events"
     ]

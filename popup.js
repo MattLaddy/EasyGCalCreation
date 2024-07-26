@@ -1,16 +1,31 @@
-document.getElementById('login').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function() {
+  const loginButton = document.getElementById('login');
+  const statusElement = document.getElementById('status');
+
+  function checkSignInStatus() {
+    chrome.identity.getAuthToken({ interactive: false }, function(token) {
+      if (chrome.runtime.lastError || !token) {
+        // User is not signed in
+        loginButton.style.display = 'block';
+        statusElement.style.display = 'none';
+      } else {
+        // User is signed in
+        loginButton.style.display = 'none';
+        statusElement.style.display = 'block';
+      }
+    });
+  }
+
+  loginButton.addEventListener('click', function() {
     chrome.identity.getAuthToken({ interactive: true }, function(token) {
       if (chrome.runtime.lastError) {
         console.error(chrome.runtime.lastError);
       } else {
-        console.log("Token acquired: " + token);
-        fetch('https://www.googleapis.com/calendar/v3/users/me/calendarList', {
-          headers: {
-            'Authorization': 'Bearer ' + token
-          }
-        }).then(response => response.json())
-          .then(data => console.log(data))
-          .catch(error => console.error(error));
+        checkSignInStatus(); // Check the sign-in status after authentication
       }
     });
   });
+
+  // Check sign-in status when the popup is loaded
+  checkSignInStatus();
+});
