@@ -12,7 +12,7 @@
     "https://www.googleapis.com/"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "src/background.js"
   },
   "oauth2": {
     "client_id": "162327068939-ev31pvd4koh0tb33f5ilf3b9pb5e1pgs.apps.googleusercontent.com",

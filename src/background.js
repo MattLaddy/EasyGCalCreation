@@ -1,4 +1,4 @@
-const API_KEY = 'OPENAPIKEYHERE';
+const API_KEY = 'OPENAPIKEY';
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
