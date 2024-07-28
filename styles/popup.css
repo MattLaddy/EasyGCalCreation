@@ -1,16 +1,24 @@
+/* Importing the 'Roboto' font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #a3a3a3;
-  color: #333;
-  width: 250px; 
-  height: 400px; 
+  font-family: 'Roboto', sans-serif;
+  background-image: url('../icons/sunset.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #000000;
+  width: 250px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; 
-  overflow: hidden; 
+  justify-content: flex-start;
+  overflow: hidden;
+  border-radius: 15px; /* Rounded edges */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 #container {
@@ -22,42 +30,48 @@ body {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  background: #a3a3a3; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: url('icons/sunset.jpg'); /* White background for contrast */
+  border-radius: 15px; /* Rounded edges */
 }
 
 #header {
   font-size: 24px;
-  font-weight: bold;
-  color: #2c3e50;
+  font-weight: 700; /* Bolder text */
+  color: #000000;
   margin-bottom: 20px;
   text-align: center;
   width: 100%;
+  border-bottom: 2px solid #000000; /* Subtle bottom border */
+  padding-bottom: 10px; /* Padding for separation */
 }
+
 #content {
   text-align: center;
   width: 100%;
 }
+
 button {
   background: #3498db;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px; /* Margin for separation */
 }
 
 button:hover {
   background: #2980b9;
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
-h2 {
+#status {
   font-size: 18px;
-  color: #27ae60;
+  color: #22d403;
   margin-top: 20px;
   font-weight: normal;
+  display: none;
 }
